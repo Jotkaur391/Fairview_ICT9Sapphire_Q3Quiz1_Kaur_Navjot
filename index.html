@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q3 QUIZ1</title>
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		#montessori {
+            background-color: #7facf5; 
+            width: 470px;
+            padding: 15px;
+            border: 3px solid black;
+
+	</style>
+</head>
+<body>
+<center>
+<script type="text/javascript">
+	//declare all variable here
+
+	var f= 10;
+	var i= 5;
+	var z= f/i;
+	var a= i-f;
+
+</script>
+
+	<div id="montessori">
+<h4><b>Arithmetic Operators</b></h4>
+<br>
+
+<p>The quotient of a and b is </p>
+<p id="display"></p>
+<p>The difference of a and b is </p>
+<p id="display2"></p>
+<button type="button" class="btn btn-dark" onclick = "var  f= 10; var i = 5; document.getElementById('display').innerHTML = z; document.getElementById('display2').innerHTML = a;"> Show me the Answer </button>
+
+<br><br><br>
+
+<h4><b>Comparison Operators</b></h4>
+<p>z less than a is </p>
+<p id="display3"></p>
+<p>z greater than a is </p>
+<p id="display4"></p>
+<button type="button" class="btn btn-dark" onclick = "var x = 10; var y = 5; document.getElementById('display3').innerHTML = z < a; document.getElementById('display4').innerHTML = z > a;"> Show me the Answer </button>
+
+<br><br><br>
+
+<h4><b>Logic Operator</b></h4>
+<p id="display5"></p>
+<p id="display6"></p>
+<button type="button" class="btn btn-dark" onclick = "var f = 10; var i = 5; document.getElementById('display5').innerHTML =!(z == 5); document.getElementById('display6').innerHTML = (z > f)&&(z < i);"> Show me the Answer </button>
+
+</div>
+
+<br><br>
+
+</body>
+</html>
