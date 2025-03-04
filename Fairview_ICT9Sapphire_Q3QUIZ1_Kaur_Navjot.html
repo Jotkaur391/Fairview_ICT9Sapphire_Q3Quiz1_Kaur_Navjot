@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz</title>
+	<style>
+		body{
+			background-image: url('https://i.pinimg.com/736x/b7/02/74/b702749292af9fe36f83496ef865c531.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.btn-success {
+			background-color: #007bff;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+
+		.btn-success:hover {
+			background-color: #0056b3;
+		}
+
+		.ticket {
+    		width: 400px;
+    		height: 200px;
+    		padding: 20px;
+    		text-align: center;
+		}
+
+		.ticket-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 20px;
+		}
+
+		.note {
+			color: red; /* Change this to any color you like */
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<h1>Ticket Center</h1>
+		<hr size= 8 ; color= black ;>
+		<h2>YOUR OWN LUXURY HEADQUARTER</h2>
+		<h3>
+		<br>
+		<details ontoggle="mega()">
+			<summary>Your Info</summary>
+			<br>
+			<i id="Hide"></i>
+			<br><br>
+		<form onsubmit="return plus(event)">
+			<label>Name :</label>
+			<input type="text" id="Name" class="form-control" required>
+			<br><br>
+			<label>Email :</label>
+			<input type="email" id="email" class="form-control" required>
+			<br><br>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</details>
+		<br>
+		<details ontoggle="tiny()">
+			<summary>Price</summary>
+			<br>
+			<i id="Hied"></i>
+		<br>
+		<form>
+			<br>
+			<select class="form-select" id="type">
+				<option value="0">Customer Type</option>
+				<option value="500">Adult (18 to 55 years old)</option>
+				<option value="250">Children (6-17 years old)</option>
+				<option value="250">Seniors (56 and above)</option>
+				<option value="180">PWD'S (56 and above)</option>
+			</select>
+			<br><br>
+		</form>
+		<br><br>
+		<summary>Membership & Group Discounts</summary>
+			<i id="Heed"></i>
+		<form>
+			<br>
+			<select class="form-select" id="tyep">
+				<option value="0">Discount Type</option>
+				<option value="7, 000">School Trip</option>
+				<option value="7, 380">Foreign Tourism Groups</option>
+				<option value="120">Membership</option>
+				<option value="120">Birthday</option>
+			</select>
+			<br><br>
+			<h6 class="note">Note: If you have chosen School Trip or Foreign Tourism Groups, you must not choose any customer type or pricing tier.</h6>
+			<button type="button" class="btn btn-success" onclick="calculateTotal()">Show</button>
+		</form>
+		</details>
+		<br>
+		<details ontoggle="message()">
+			<br>
+			<summary>Print Your Ticket</summary>
+			<i id="Hedi"></i>
+			<br>
+			<div class="ticket-container">
+				<img src="file:///C:/Users/User/Desktop/Screenshots/Screenshot%20(358).png">
+				<button type="button" class="btn btn-success" onclick="sendEmail()">Print</button>
+			</div>
+			<br>
+			<button type="button" class="btn btn-success" onclick="buyticket()">Buy Another Ticket</button>
+		</details>
+		<br><br>
+		<hr size= 8 ; color= black ;>
+		<center>@Navjot Kaur</center>
+		<script>
+			function mega(){
+				document.getElementById("Hide").innerHTML = "Please Input the Following Information.";
+			}
+			function tiny(){
+				document.getElementById("Hied").innerHTML = "Please Insert Your Pricing Tier.";
+			}
+			function message(){
+				document.getElementById("Hedi").innerHTML = "You may now Print your Tickets.";
+			}
+			function plus(event){
+				var Name = document.getElementById("Name").value;
+				var email = document.getElementById("email").value;
+				window.alert("Thank you! " + Name + ", you may now proceed!😃😃");
+			}
+			function calculateTotal(){
+				var entry1 = parseInt(document.getElementById("type").value);
+				var entry2 = parseInt(document.getElementById("tyep").value);
+				var total = entry1 - entry2;
+				window.alert("Total Price: ₱" + total);
+			}
+			function sendEmail(){
+				var email = document.getElementById("email").value;
+				window.alert("The ticket has been sent to your email");
+			}
+			function buyticket(){
+				location.reload();
+			}
+		</script>
+</body>
+</html>
